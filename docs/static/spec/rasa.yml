@@ -488,7 +488,25 @@ paths:
               $ref: '#/components/schemas/JSONTrainingRequest'
           application/x-yaml:
             schema:
-              type: string
+              example:
+                version: "2.0"
+                config:
+                  - name: SpacyNLP
+                  - name: SpaceTokenizer
+                  # more NLU components
+                nlu:
+                - intent: greet
+                  examples: |
+                    - Hey
+                    - Hi
+                    - hey there
+                    - hello
+                - intent: bye
+                  examples: |
+                    - googbye
+                    - bye
+                    - ciao
+                    - see you
 
       responses:
         200:
